@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { GithubInterceptor } from './services/interceptors/github.interceptor';
 import { UserModule } from './components/models/user/user.module';
+import { FechaPipe } from './components/footer/libs/pipe/fecha/fecha.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UserModule } from './components/models/user/user.module';
     HeaderComponent,
     NotFoundComponent,
     IndexComponent,
-    FooterComponent
+    FooterComponent,
+    FechaPipe
   ],
   imports: [
     BrowserModule,

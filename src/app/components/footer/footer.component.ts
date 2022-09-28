@@ -7,5 +7,4 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
   autor: string = "Diego Cabrera";
-  date: string = "2022-09-01"
 }
