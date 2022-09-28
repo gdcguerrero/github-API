@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class AuthService {
 
   public auth: boolean = false;
-  public name!: string;
+  public user!: string;
   public password!: string;
   public token :string = '';
   
@@ -29,9 +29,10 @@ export class AuthService {
     this.auth = (localStorage.getItem('auth')?.toLowerCase() == 'true');
   }
 
-  getToken(usaer:string, password:string) : boolean{
-    if (usaer == 'gdcguerrero' && password == '1234') {
+  getToken(user:string, password:string) : boolean{
+    if (user == 'gdcguerrero' && password == '1234') {
       this.token= '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'
+      console.log(this.token);
     }
     return (this.token != '')
   }

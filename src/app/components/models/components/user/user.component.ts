@@ -19,7 +19,7 @@ export class UserComponent implements OnInit {
     const api = 'https://api.github.com/user/repos';
     this.response = this.http.get(api).subscribe(resp => {
       console.log(resp);
-      console.log(this.response);
+      //console.log(this.response);
       return resp;
     })
   }

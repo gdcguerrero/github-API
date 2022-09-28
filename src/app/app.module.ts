@@ -8,7 +8,7 @@ import { NotFoundComponent } from './components/shared/not-found/not-found.compo
 import { IndexComponent } from './components/index/index.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { GithubInterceptor } from './services/interceptors/github.interceptor';
 import { UserModule } from './components/models/user/user.module';
 
@@ -25,7 +25,8 @@ import { UserModule } from './components/models/user/user.module';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    UserModule
+    UserModule,
+    HttpClientModule
   ],
   providers: [
     {
