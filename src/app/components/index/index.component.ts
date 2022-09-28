@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/service/auth.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-index',
-  templateUrl: './index.component.html',
-  styleUrls: ['./index.component.scss']
+  templateUrl: './index.component.html'
 })
 export class IndexComponent implements OnInit {
 
@@ -38,11 +38,14 @@ export class IndexComponent implements OnInit {
 
     if(!this.authService.getToken(user, password)){
       this.error = 'Usuario incorrecto';
-      console.log('error');
     } else {
       this.error = '';
-      console.log('entro');
       this.login()
+      Swal.fire(
+        `wellcome ${user}`
+      )
     }
   }
+
+  
 }

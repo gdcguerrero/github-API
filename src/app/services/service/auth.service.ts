@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import Swal from 'sweetalert2'
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,25 @@ export class AuthService {
   public token :string = '';
   
   closeSession(){
-    this.auth = false
-    localStorage.clear();
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, exit'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.auth = false
+        localStorage.clear();
+        Swal.fire(
+          'Ok',
+          '',
+          'success'
+        )
+      }
+    })
   }
   
   login(){
@@ -31,7 +49,7 @@ export class AuthService {
 
   getToken(user:string, password:string) : boolean{
     if (user == 'gdcguerrero' && password == '1234') {
-      this.token= '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'
+      this.token= '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'
       console.log(this.token);
     }
     return (this.token != '')

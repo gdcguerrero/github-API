@@ -23,7 +23,7 @@ export class GithubInterceptor implements HttpInterceptor {
     const header_request: HttpRequest<any> = request.clone({
       headers: request.headers.set('Authorization',`Bearer ${token}`)
     })
-    console.log('token>',header_request);
+    console.log('interceptor>',header_request);
     return next.handle(header_request);
   }
 }
