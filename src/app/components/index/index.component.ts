@@ -9,11 +9,11 @@ import { AuthService } from 'src/app/services/service/auth.service';
 })
 export class IndexComponent implements OnInit {
 
-  loginForm!: FormGroup
+  loginForm!: FormGroup;
   error! : string;
 
   constructor(public authService: AuthService, public formBuilder: FormBuilder) {
-    this.authService.showSession(); }
+    this.authService.setSession(); }
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
@@ -35,11 +35,13 @@ export class IndexComponent implements OnInit {
   onSubmit(){
     let user: string = this.loginForm.get('user')?.value;
     let password: string = this.loginForm.get('password')?.value;
+
     if(!this.authService.getToken(user, password)){
       this.error = 'Usuario incorrecto';
-      this.closeSession()
+      console.log('error');
     } else {
       this.error = '';
+      console.log('entro');
       this.login()
     }
   }

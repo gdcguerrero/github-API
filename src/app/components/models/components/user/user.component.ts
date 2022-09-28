@@ -12,6 +12,7 @@ export class UserComponent implements OnInit {
   constructor(public http: HttpClient) { }
 
   ngOnInit(): void {
+    this.getData()
   }
 
   getData(){
@@ -22,6 +23,4 @@ export class UserComponent implements OnInit {
       return resp;
     })
   }
-
-
 }

@@ -8,7 +8,9 @@ import { AuthService } from '../service/auth.service';
 })
 export class AuthGuard implements CanActivate, CanLoad {
   
-  constructor(public authService:AuthService) {}
+  constructor(public authService:AuthService) {
+    console.group('servicio:' , this.authService);
+  }
 
   check(){
     return this.authService.auth;
@@ -24,6 +26,7 @@ export class AuthGuard implements CanActivate, CanLoad {
   canLoad(
     route: Route,
     segments: UrlSegment[]): Observable<boolean> | Promise<boolean> | boolean {
+      this.authService.showSession();
       console.log('canLond', this.authService.auth);
     return this.check();
   }

@@ -15,7 +15,12 @@ const routes: Routes = [
     component: IndexComponent,
     pathMatch : 'full'
   },
-  
+  {
+    path: 'apiLazy',
+    loadChildren: () => import('./components/models/user/user-routing.module').then(m => m.UserRoutingModule),
+    //canLoad: [AuthGuard],
+    //canActivate:[AuthGuard]
+  },
   {
     path: '404',
     component: NotFoundComponent,
