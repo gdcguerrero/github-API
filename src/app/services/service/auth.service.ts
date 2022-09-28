@@ -49,7 +49,7 @@ export class AuthService {
 
   getToken(user:string, password:string) : boolean{
     if (user == 'gdcguerrero' && password == '1234') {
-      this.token= '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'
+      this.token= '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'
       console.log(this.token);
     }
     return (this.token != '')
