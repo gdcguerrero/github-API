@@ -6,9 +6,8 @@ import { AuthGuard } from './services/resolvers/auth.guard';
 
 const routes: Routes = [
   {
-    path: '',
-    component: IndexComponent,
-    pathMatch : 'full'
+    path: 'login',
+    component: IndexComponent
   },
   {
     path: 'apiLazy',

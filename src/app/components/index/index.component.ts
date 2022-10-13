@@ -28,8 +28,8 @@ export class IndexComponent implements OnInit {
     let user: string = this.loginForm.get('user')?.value;
     let password: string = this.loginForm.get('password')?.value;
     //Validado usuario
-    if(!this.authService.getToken(user, password)){
-      this.error = 'Usuario incorrecto';
+    if(!this.authService.authUser(user, password)){
+      this.error = 'User or Password incorrect';
     } else {
       this.authService.setLogin()
       Swal.fire(

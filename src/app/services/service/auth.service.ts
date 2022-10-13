@@ -3,6 +3,7 @@ import Swal from 'sweetalert2'
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Constants } from 'src/app/utils/constants.class';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,6 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   public auth: boolean = false;
-  public token: string = '';
 
   constructor(private http: HttpClient, private router: Router) {
 
@@ -34,13 +34,12 @@ export class AuthService {
           '',
           'success'
         )
-        this.router.navigate(["/index"])
+        this.router.navigate(["login"])
       }
     })
   }
 
   setLogin() {
-    this.auth = true
     localStorage.setItem('auth', this.auth.toString())
     this.router.navigate(["/apiLazy/user"])
   }
@@ -57,19 +56,19 @@ export class AuthService {
     return this.auth
   }
 
-  getToken(user: string, password: string): boolean {
-    if (true) { //user == 'gdcguerrero' && password == '1234'
-      this.token = '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'
+  authUser(user: string, password: string): boolean {
+    if (user == 'gdcguerrero' && password == '1234') {
+      return this.auth=true
     }
-    return (this.token != '')
+    return this.auth
   }
 
   apiGitUser(): Observable<any> {
-    return this.http.get('https://api.github.com/user')
+    return this.http.get(Constants.api)
   }
 
   apiGitRepos(): Observable<any> {
-    return this.http.get('https://api.github.com/user/repos')
+    return this.http.get(Constants.api+'/repos')
   }
 
 }
