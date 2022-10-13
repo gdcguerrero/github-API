@@ -10,6 +10,10 @@ const routes: Routes = [
     component: IndexComponent
   },
   {
+    path: '',
+    redirectTo : 'login'
+  },
+  {
     path: 'apiLazy',
     loadChildren: () => import('./components/models/user/user.module').then(m => m.UserModule),
     canLoad: [AuthGuard],
