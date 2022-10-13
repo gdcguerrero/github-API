@@ -1,4 +1,4 @@
 export class Constants {
-    static token = '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'
+    static token = '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'
     static api = 'https://api.github.com/user'
 }

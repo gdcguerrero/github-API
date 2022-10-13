@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
 import Swal from 'sweetalert2'
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
-import { Constants } from 'src/app/utils/constants.class';
+import { Observable } from 'rxjs'
+import { HttpClient } from '@angular/common/http'
+import { Router } from '@angular/router'
+import { Constants } from 'src/app/utils/constants.class'
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +28,7 @@ export class AuthService {
     }).then((result) => {
       if (result.isConfirmed) {
         this.auth = false
-        localStorage.clear();
+        localStorage.clear()
         Swal.fire(
           'Ok',
           '',
@@ -45,7 +45,7 @@ export class AuthService {
   }
 
   getSession() {
-    this.auth = (localStorage.getItem('auth')?.toLowerCase() == 'true');
+    this.auth = (localStorage.getItem('auth')?.toLowerCase() == 'true')
     if (this.auth) {
       this.router.navigate(["/apiLazy/user"])
     }

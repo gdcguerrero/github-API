@@ -6,8 +6,8 @@ import * as moment from 'moment';
 })
 export class FechaPipe implements PipeTransform {
 
-  transform(value: any, ...args: any[]): any {
-    moment.locale('es-mx');
+  transform(value: any): any {
+    moment.locale('es-mx')
     let now = moment().calendar()
     return now;
   }

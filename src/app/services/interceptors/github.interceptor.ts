@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
 import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
   HttpInterceptor
-} from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Constants } from 'src/app/utils/constants.class';
+} from '@angular/common/http'
+import { Observable } from 'rxjs'
+import { Constants } from 'src/app/utils/constants.class'
 
 @Injectable()
 export class GithubInterceptor implements HttpInterceptor {
@@ -21,6 +21,6 @@ export class GithubInterceptor implements HttpInterceptor {
         }
       }
     )
-    return next.handle(request);
+    return next.handle(request)
   }
 }

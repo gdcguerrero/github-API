@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { AuthService } from 'src/app/services/service/auth.service';
+import { Component, OnInit } from '@angular/core'
+import { HttpClient } from '@angular/common/http'
+import { AuthService } from 'src/app/services/service/auth.service'
 
 @Component({
   selector: 'app-user',
