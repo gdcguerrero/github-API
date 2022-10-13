@@ -11,11 +11,6 @@ const routes: Routes = [
     pathMatch : 'full'
   },
   {
-    path: 'index',
-    component: IndexComponent,
-    pathMatch : 'full'
-  },
-  {
     path: 'apiLazy',
     loadChildren: () => import('./components/models/user/user.module').then(m => m.UserModule),
     canLoad: [AuthGuard],

@@ -4,13 +4,12 @@ import { AuthService } from 'src/app/services/service/auth.service';
 
 @Component({
   selector: 'app-user',
-  templateUrl: './user.component.html'
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
 
-  private response: any;
-  public username!: any;
-  public img: string ='https://avatars.githubusercontent.com/u/65260943?v=4'
+  public apiGit!: any;
   
   constructor(public http: HttpClient, public authService: AuthService) { }
 
@@ -18,16 +17,7 @@ export class UserComponent implements OnInit {
     this.getData()
   }
 
-  closeSession(){
-    this.authService.closeSession();
-  }
-
   getData() {
-    const user = 'https://api.github.com/user';
-    let response = this.http.get(user).subscribe(resp => {
-      this.username = resp
-      console.log(this.username);
-      return resp;
-    })
+    this.authService.apiGitUser().subscribe(resp => this.apiGit=resp)
   }
 }

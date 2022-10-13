@@ -9,7 +9,6 @@ import { AuthService } from '../service/auth.service';
 export class AuthGuard implements CanActivate, CanLoad {
   
   constructor(public authService:AuthService) {
-    console.group('servicio:' , this.authService);
   }
 
   check(){
@@ -19,15 +18,12 @@ export class AuthGuard implements CanActivate, CanLoad {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-      console.log('canActivate', this.authService.auth);
     return this.check();
   }
 
   canLoad(
     route: Route,
     segments: UrlSegment[]): Observable<boolean> | Promise<boolean> | boolean {
-      this.authService.showSession();
-      console.log('canLond', this.authService.auth);
     return this.check();
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/service/auth.service';
 import Swal from 'sweetalert2'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-index',
@@ -9,11 +10,11 @@ import Swal from 'sweetalert2'
 })
 export class IndexComponent implements OnInit {
 
-  loginForm!: FormGroup;
-  error! : string;
+  public loginForm!: FormGroup;
+  public error! : string;
 
-  constructor(public authService: AuthService, public formBuilder: FormBuilder) {
-    this.authService.setSession(); }
+  constructor(public authService: AuthService, public formBuilder: FormBuilder, private router: Router) {
+    this.authService.getSession(); } //comprobar que este dentro de la sesion
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
@@ -22,25 +23,15 @@ export class IndexComponent implements OnInit {
     })
   }
 
-  login(){
-    this.authService.login()
-  }
-  closeSession(){
-    this.authService.closeSession()
-  }
-  showSession(){
-    return this.authService.showSession()
-  }
-
   onSubmit(){
+    //Obtener datos del login
     let user: string = this.loginForm.get('user')?.value;
     let password: string = this.loginForm.get('password')?.value;
-
+    //Validado usuario
     if(!this.authService.getToken(user, password)){
       this.error = 'Usuario incorrecto';
     } else {
-      this.error = '';
-      this.login()
+      this.authService.setLogin()
       Swal.fire(
         `wellcome ${user}`
       )

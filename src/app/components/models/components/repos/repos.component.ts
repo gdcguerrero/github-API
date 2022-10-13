@@ -9,25 +9,20 @@ import { AuthService } from 'src/app/services/service/auth.service';
 })
 export class ReposComponent implements OnInit {
 
-  private response: any;
   public apiGit!: any;
+  public index: number = 0;
 
-  constructor(public http: HttpClient, public authService: AuthService) { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
-    this.getData()
+    this.apiGitRepos()
   }
 
-  closeSession(){
-    this.authService.closeSession();
+  apiGitRepos() {
+    this.authService.apiGitRepos().subscribe(resp => this.apiGit=resp)
   }
 
-  getData() {
-    const api = 'https://api.github.com/user/repos';
-    this.response = this.http.get(api).subscribe(resp => {
-      this.apiGit = resp
-      console.log(this.apiGit);
-      return resp;
-    })
+  indexI(i: number){
+    this.index = i;
   }
 }

@@ -1,0 +1,43 @@
+.container {
+    max-width: 120vh;
+}
+
+.bg {
+    background-color: #272727;
+}
+
+.fs-6 {
+    color: #8d8d8d;
+    margin: unset;
+}
+
+.bgGradient {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 51%, rgba(39, 39, 39, 1) 51%);
+}
+
+.roundedEnd{
+    border-top-right-radius: var(--bs-border-radius)!important;
+    border-bottom-right-radius: var(--bs-border-radius)!important;
+}
+
+.imgSize{
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 992px) {
+    .bgGradient {
+        background: rgb(255, 255, 255);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 51%, rgba(39, 39, 39, 1) 51%);
+    }
+
+    .roundedEnd{
+        border-bottom-left-radius: var(--bs-border-radius)!important;
+        border-bottom-right-radius: var(--bs-border-radius)!important;
+    }
+
+    .imgSize{
+        max-width: 70%;
+    }
+}
