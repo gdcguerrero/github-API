@@ -1,6 +1,6 @@
-<div class="container mb-5" style="padding: 0% 0% 0% 30%">
-    <div class="card text-center bg-dark bg-gradient bg-opacity-10 mt-5 pt-3" style="width: 18rem;">
-        <form class="cart-body" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+<div class="container my-5" style="padding: 0% 0% 0% 30%;">
+    <div class="card text-center mt-5 pt-3" style="width: 18rem; background-color: #80558C;">
+        <form class="cart-body" [formGroup]="loginForm" (ngSubmit)="onSubmit()" style="background-color: #80558C;">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                 class="bi bi-person-circle mb-3" viewBox="0 0 16 16">
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
@@ -15,7 +15,7 @@
                 <input type="password" class="form-control mx-4" placeholder="password" aria-label="password"
                     aria-describedby="basic-addon1" formControlName="password">
             </div>
-            <button class="btn btn-outline-success mb-3" type="submit" [disabled]="!loginForm.valid">Login</button>
+            <button class="btn btn-success mb-3" type="submit" [disabled]="!loginForm.valid">Login</button>
             <div *ngIf="error" style="color: red;">
                 {{error}}
             </div>

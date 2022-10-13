@@ -3,17 +3,17 @@
 }
 
 .bg {
-    background-color: #272727;
+    background-color: #80558c;
 }
 
 .fs-5 {
-    color: #8d8d8d;
+    color: #251B37;
     margin: unset;
 }
 
 .bgGradient {
     background: rgb(255, 255, 255);
-    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 51%, rgba(39, 39, 39, 1) 51%);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 51%, rgba(128, 85, 140, 1) 51%);
 }
 
 .roundedEnd{
@@ -29,7 +29,7 @@
 @media (max-width: 992px) {
     .bgGradient {
         background: rgb(255, 255, 255);
-        background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 51%, rgba(39, 39, 39, 1) 51%);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 51%, rgba(128, 85, 140, 1) 51%);
     }
 
     .roundedEnd{
