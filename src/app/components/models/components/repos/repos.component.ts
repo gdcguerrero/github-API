@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/service/auth.service';
+import { Component, OnInit } from '@angular/core'
+import { AuthService } from 'src/app/services/service/auth.service'
 
 @Component({
   selector: 'app-repos',
@@ -9,8 +8,8 @@ import { AuthService } from 'src/app/services/service/auth.service';
 })
 export class ReposComponent implements OnInit {
 
-  public apiGit!: any;
-  public index: number = 0;
+  public apiGit!: any
+  public index: number = 0
 
   constructor(public authService: AuthService) { }
 
@@ -23,6 +22,6 @@ export class ReposComponent implements OnInit {
   }
 
   indexI(i: number){
-    this.index = i;
+    this.index = i
   }
 }

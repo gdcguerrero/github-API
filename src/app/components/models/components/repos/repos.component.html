@@ -1,11 +1,11 @@
-<div class="container mb-5">
+<div class="container my-5">
     <div class="row">
-        <div class="col-sm-2 p0">
-            <ul class="list-group" *ngFor="let respos of apiGit;index as i">
-                <li class="list-group-item bg" (click)="indexI(i)">{{respos.name}}</li>
-            </ul>
+        <div class="col-sm-2 p0 text-white">
+            <ng-container *ngFor="let repos of apiGit;index as i">
+                <p (click)="indexI(i)" class="hand">{{repos.name}}</p>
+            </ng-container>
         </div>
-        <div class="col-sm-10 bg bgGradient rRT">
+        <div class="col-sm-10 bgGradient rRT">
             <div class="container text-center">
                 <div class="row justify-content-center">
                     <div class="col-sm-12 col-12 my-5">
